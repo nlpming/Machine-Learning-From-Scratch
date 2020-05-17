@@ -1,7 +1,10 @@
 from __future__ import division, print_function
 import numpy as np
+import sys
 from sklearn import datasets
 import matplotlib.pyplot as plt
+
+sys.path.append("..")
 
 # Import helper functions
 from utils import train_test_split, accuracy_score
