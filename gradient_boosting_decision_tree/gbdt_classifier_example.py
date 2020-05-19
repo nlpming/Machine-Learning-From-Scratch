@@ -1,6 +1,7 @@
 from __future__ import division, print_function
 import numpy as np
 import sys
+import pdb
 from sklearn import datasets
 import matplotlib.pyplot as plt
 
@@ -14,7 +15,7 @@ from gradient_boosting_decision_tree.gbdt_model import GBDTClassifier
 
 def main():
 
-    print ("-- Gradient Boosting Classification --")
+    print("-- Gradient Boosting Classification --")
 
     data = datasets.load_iris()
     X = data.data
@@ -28,9 +29,7 @@ def main():
     y_pred = clf.predict(X_test)
 
     accuracy = accuracy_score(y_test, y_pred)
-
-    print ("Accuracy:", accuracy)
-
+    print("Accuracy:", accuracy)
 
     Plot().plot_in_2d(X_test, y_pred,
         title="Gradient Boosting",

@@ -1,8 +1,10 @@
 from __future__ import division, print_function
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
+sys.path.append("..")
 from utils import train_test_split, standardize, accuracy_score
 from utils import mean_squared_error, calculate_variance, Plot
 from decision_tree.decision_tree_model import RegressionTree

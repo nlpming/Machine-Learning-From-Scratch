@@ -67,8 +67,10 @@ class GBDT(object):
         self.trees[0].fit(X, y)
         y_pred = self.trees[0].predict(X)
         for i in self.bar(range(1, self.n_estimators)):
+            # 计算梯度
             gradient = self.loss.gradient(y, y_pred)
             self.trees[i].fit(X, gradient)
+            # 上一棵树预测结果，乘以学习率
             y_pred -= np.multiply(self.learning_rate, self.trees[i].predict(X))
 
     def predict(self, X):
